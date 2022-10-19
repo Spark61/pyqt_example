@@ -1,7 +1,7 @@
 import random
 import sys
 
-from PyQt5.QtWidgets import QMainWindow, QLabel, QLineEdit, QApplication, QVBoxLayout, QWidget, QPushButton
+from PyQt5.QtWidgets import QMainWindow, QLabel, QApplication, QVBoxLayout, QWidget, QPushButton
 
 
 class MainWindow(QMainWindow):
@@ -24,6 +24,7 @@ class MainWindow(QMainWindow):
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
+
     def click(self):
         print("Hello World")
 
@@ -37,6 +38,7 @@ class MainWindow(QMainWindow):
                 key = key.lower()
 
             self.label.setText(self.label.text() + key)
+
 
 app = QApplication(sys.argv)
 win = MainWindow()

@@ -13,6 +13,7 @@ class MainWindow(QMainWindow):
     def but_was_clicked(self, info):
         print("clicked", info)
 
+
 app = QApplication([])
 win = MainWindow()
 win.show()

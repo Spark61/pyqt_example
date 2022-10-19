@@ -1,7 +1,7 @@
 import random
 import sys
 
-from PyQt5.QtWidgets import QMainWindow, QLabel, QLineEdit, QApplication, QVBoxLayout, QWidget, QPushButton, QGridLayout
+from PyQt5.QtWidgets import QMainWindow, QLabel, QApplication, QWidget, QPushButton, QGridLayout
 
 
 class MainWindow(QMainWindow):
@@ -10,7 +10,10 @@ class MainWindow(QMainWindow):
 
         self.setWindowTitle("Formular App")
 
-        rules = ["Strebe nach Konsistenz", "Strebe nach universeller Bedienbarkeit", "Biete informatives Feedback an", "Gesalten sie Dialoge so, dass sie zu einem Abschluss führen", "Verhindere Fehler", "Erlaube die Umkehrung von Aktionen", "Gib dem Ntzer das Gefühl der Kontrolle", "Reduziere die Belastung fpr das Kurzzeitgedächtnis"]
+        rules = ["Strebe nach Konsistenz", "Strebe nach universeller Bedienbarkeit", "Biete informatives Feedback an",
+                 "Gesalten sie Dialoge so, dass sie zu einem Abschluss führen", "Verhindere Fehler",
+                 "Erlaube die Umkehrung von Aktionen", "Gib dem Ntzer das Gefühl der Kontrolle",
+                 "Reduziere die Belastung fpr das Kurzzeitgedächtnis"]
 
         layout = QGridLayout()
 
@@ -20,8 +23,7 @@ class MainWindow(QMainWindow):
             label = QLabel(rule)
 
             layout.addWidget(label, 0, col)
-            col+=1
-
+            col += 1
 
         self.label = QLabel("BOX LAYOUT!")
         self.label2 = QLabel("BOX LAYOUT!")
@@ -29,11 +31,12 @@ class MainWindow(QMainWindow):
         self.button = QPushButton("Drück mich :)")
         self.button.clicked.connect(self.click)
 
-        layout.addWidget(self.button, 1, 0, 1,col)
+        layout.addWidget(self.button, 1, 0, 1, col)
 
         container = QWidget()
         container.setLayout(layout)
         self.setCentralWidget(container)
+
     def click(self):
         print("Hello World")
 
@@ -47,6 +50,7 @@ class MainWindow(QMainWindow):
                 key = key.lower()
 
             self.label.setText(self.label.text() + key)
+
 
 app = QApplication(sys.argv)
 win = MainWindow()

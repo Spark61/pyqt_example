@@ -1,6 +1,6 @@
 import sys
 
-from PyQt5.QtWidgets import QMainWindow, QApplication, QBoxLayout, QLabel, QPushButton, QLineEdit, QHBoxLayout, QWidget, \
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QPushButton, QLineEdit, QWidget, \
     QVBoxLayout
 
 
@@ -30,6 +30,7 @@ class MainWindow(QMainWindow):
         self.btn.setEnabled(True)
 
         self.label.setText(self.input.text())
+
 
 app = QApplication(sys.argv)
 window = MainWindow()
