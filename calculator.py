@@ -104,14 +104,6 @@ class MainWindow(QMainWindow):
         self.label_1.setText("0")
         self.label_2.setText("")
 
-    def calculate(self):
-        if self.label_2.text() == "":
-            self.label_1.setText("0")
-        else:
-            content = self.label_2.text().replace("^", "**")
-
-            self.label_1.setText(str(eval(content)))
-
     def operator_btn_press(self):
         content = self.sender().text()
 
@@ -123,6 +115,14 @@ class MainWindow(QMainWindow):
 
     def show_value(self, content):
         self.label_2.setText(self.label_2.text() + content)
+
+    def calculate(self):
+        if self.label_2.text() == "":
+            self.label_1.setText("0")
+        else:
+            content = self.label_2.text().replace("^", "**")
+
+            self.label_1.setText(str(eval(content)))
 
 
 app = QApplication([])
